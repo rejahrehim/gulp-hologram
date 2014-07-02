@@ -6,7 +6,7 @@ gulp-hologram
 ## Getting Started
 This plugin requires gulp.
 
-If you haven't used [gulp](http://gulpjs.com/) before, be sure to check out the [Getting Started](http://gulpjs.com/getting-started) guide, as it explains how to create a [gulpfile](http://gulpjs.com/sample-gulpfile) as well as install and use gulp plugins. Once you're familiar with that process, you may install this plugin with this command:
+If you haven't used [gulp](http://gulpjs.com/) before, be sure to check out the [Getting Started](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started) guide, as it explains how to create a [gulpfile](https://github.com/gulpjs/gulp/blob/master/README.md#sample-gulpfilejs) as well as install and use gulp plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
 npm install gulp-hologram --save-dev
@@ -22,18 +22,20 @@ var hologram = require('gulp-hologram');
 
 ### Overview
 In your project's gulpfile, add a section named `hologram` .
+The path to your hologram config file as source.
 
 ```js
-gulp.src('config.yml')
-        .pipe(hologram());
+gulp.task('hologram', function() {
+        gulp.src('config.yml')
+                .pipe(hologram());
+});
 ```
 
 ### Options
 
 #### options.logging
-Type: `Boolian`
+Type: `Boolean`
 
-The path to your hologram config file as source.
 
 ## Contributing
 Take care to maintain the existing coding style. [gulp](http://gulpjs.com/).
@@ -41,7 +43,7 @@ Take care to maintain the existing coding style. [gulp](http://gulpjs.com/).
 ## TO DO
  -Add unit tests
 ## Release History
-_(Nothing yet)_
+ - 1.0.0 (First release)
 
 ## License
 Copyright (c) 2014 Rejah Rehim. Licensed under the MIT license.
