@@ -1,4 +1,5 @@
-# gulp-hologram
+gulp-hologram
+=============
 
 > Generate Hologram style guides with gulp
 
@@ -31,6 +32,7 @@ ggulp.src('config.yml')
 
 #### options.logging
 Type: `Boolian`
+
 *Required*
 
 The path to your hologram config file as source.
@@ -43,3 +45,6 @@ _(Nothing yet)_
 
 ## License
 Copyright (c) 2014 Rejah Rehim. Licensed under the MIT license.
+=======
+
+
