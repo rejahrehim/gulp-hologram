@@ -1,0 +1,38 @@
+{
+  "name": "gulp-hologram",
+  "version": "1.0.0",
+  "description": "Generate Hologram style guides with Gulp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rejahrehim/gulp-hologram.git"
+  },
+  "author": "Rejah Rehim <rejah.rehim@gmail.com> (http://www.makemeresume.com/@rejah)",
+  "keywords": [
+    "gulpplugin"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "which": "~1.0.5",
+    "gulp-util": "~2.2.19",
+    "path": "~0.4.9",
+    "stream": "0.0.1",
+    "plexer": "0.0.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "gulp-util": "~2.2.19",
+    "path": "~0.4.9",
+    "plexer": "~0.0.3",
+    "stream": "~0.0.1",
+    "which": "~1.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
