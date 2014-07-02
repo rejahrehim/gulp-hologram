@@ -36,8 +36,10 @@ Type: `Boolian`
 The path to your hologram config file as source.
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [gulp](http://gulpjs.com/).
+Take care to maintain the existing coding style. [gulp](http://gulpjs.com/).
 
+## TO DO
+ -Add unit tests
 ## Release History
 _(Nothing yet)_
 
