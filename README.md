@@ -15,7 +15,7 @@ npm install gulp-hologram --save-dev
 Once the plugin has been installed, it may be enabled inside your gulpfile with this line of JavaScript:
 
 ```js
-gulp.loadNpmTasks('gulp-hologram');
+var hologram = require('gulp-hologram');
 ```
 
 ## The "hologram" task
@@ -33,8 +33,6 @@ ggulp.src('config.yml')
 #### options.logging
 Type: `Boolian`
 
-*Required*
-
 The path to your hologram config file as source.
 
 ## Contributing
@@ -45,6 +43,4 @@ _(Nothing yet)_
 
 ## License
 Copyright (c) 2014 Rejah Rehim. Licensed under the MIT license.
-=======
-
 
