@@ -24,7 +24,7 @@ var hologram = require('gulp-hologram');
 In your project's gulpfile, add a section named `hologram` .
 
 ```js
-ggulp.src('config.yml')
+gulp.src('config.yml')
         .pipe(hologram());
 ```
 
