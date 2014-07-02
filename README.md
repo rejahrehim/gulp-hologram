@@ -1,5 +1,6 @@
-gulp-hologram
-=============
+#gulp-hologram  
+
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
 > Generate Hologram style guides with gulp
 
@@ -48,3 +49,6 @@ Take care to maintain the existing coding style. [gulp](http://gulpjs.com/).
 ## License
 Copyright (c) 2014 Rejah Rehim. Licensed under the MIT license.
 
+[downloads-image]: http://img.shields.io/npm/dm/gulp-hologram.svg
+[npm-url]: https://npmjs.org/package/gulp-hologram
+[npm-image]: http://img.shields.io/npm/v/gulp-hologram.svg
