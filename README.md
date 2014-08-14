@@ -46,6 +46,7 @@ Take care to maintain the existing coding style. [gulp](http://gulpjs.com/).
 ## TO DO
  -Add unit tests
 ## Release History
+ - 1.1.0 (Added support for Bundler)
  - 1.0.0 (First release)
 
 ## License
