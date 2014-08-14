@@ -37,6 +37,8 @@ gulp.task('hologram', function() {
 #### options.logging
 Type: `Boolean`
 
+#### options.bundler
+Set `bundler: true` to invoke `hologram` via bundler.
 
 ## Contributing
 Take care to maintain the existing coding style. [gulp](http://gulpjs.com/).
