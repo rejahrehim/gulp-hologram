@@ -23,17 +23,22 @@ function gulpHologram(opts) {
   opts = opts || {};
   var configPath = [],
     stream = new Stream.PassThrough({objectMode: true}),
-    hologramExecutable = "hologram";
+    hologramExecutable = "hologram",
+    args = [];
 
-
-  // check command exist
-  try {
-    hologramExecutable = which(hologramExecutable);
-  } catch (err) {
-    throw new PluginError(PLUGIN_NAME,
-      "\nYou need to have Hologram installed and in your PATH for this task to work.\n" +
-      "\nsudo gem install hologram\n"
-      );
+  if (opts.bundler) {
+    hologramExecutable = "bundle";
+    args = ["exec", "hologram"];
+  } else {
+    // check command exist
+    try {
+      hologramExecutable = which(hologramExecutable);
+    } catch (err) {
+      throw new PluginError(PLUGIN_NAME,
+        "\nYou need to have Hologram installed and in your PATH for this task to work.\n" +
+        "\nsudo gem install hologram\n"
+        );
+    }
   }
 
   // Run hologram
@@ -61,9 +66,9 @@ function gulpHologram(opts) {
 
     // spawn program
     if (opts.logging) {
-      log("Running command:", hologramExecutable, configPath[0]);
+      log("Running command:", hologramExecutable, args, configPath[0]);
     }
-    var program = spawn(hologramExecutable, configPath);
+    var program = spawn(hologramExecutable, args, configPath);
 
     // listen to stderr and emit errors if any
     var errBuffer = new Buffer(0);
