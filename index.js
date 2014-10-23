@@ -1,5 +1,5 @@
 /*
-* grunt-hologram
+* gulp-hologram
 *
 *
 * Copyright (c) 2014 Rejah Rehim
@@ -21,30 +21,37 @@ var PLUGIN_NAME = "gulp-hologram";
 function gulpHologram(opts) {
   "use strict";
   opts = opts || {};
-  var configPath = [],
+  var args = [],
     stream = new Stream.PassThrough({objectMode: true}),
-    hologramExecutable = "hologram",
-    args = [];
+    hologramExecutable = "hologram";
 
   if (opts.bundler) {
     hologramExecutable = "bundle";
     args = ["exec", "hologram"];
-  } else {
-    // check command exist
+    // check bundle command exist
     try {
       hologramExecutable = which(hologramExecutable);
     } catch (err) {
       throw new PluginError(PLUGIN_NAME,
-        "\nYou need to have Hologram installed and in your PATH for this task to work.\n" +
-        "\nsudo gem install hologram\n"
+        "\nYou need to have Bundler installed in your PATH for this task to work.\n" +
+        "\nsudo gem install bundler\n"
         );
     }
+  }
+  // check Hologram command exist
+  try {
+    hologramExecutable = which(hologramExecutable);
+  } catch (err) {
+    throw new PluginError(PLUGIN_NAME,
+      "\nYou need to have Hologram installed in your PATH for this task to work.\n" +
+      "\nsudo gem install hologram\n"
+      );
   }
 
   // Run hologram
   stream._transform = function (file, unused, cb) {
 
-      // Null check config file path from source
+    // Null check config file path from source
 
     if (file.isNull()) {
       stream.push(file);
@@ -55,7 +62,9 @@ function gulpHologram(opts) {
       if (opts.logging) {
         log("Config file extension:", ext);
       }
-      configPath.push(file.path);
+
+      //Passing config path of hologram to args
+      args.push(file.path);
 
       if (ext !== ".yml") {
         throw new PluginError(PLUGIN_NAME,
@@ -66,22 +75,9 @@ function gulpHologram(opts) {
 
     // spawn program
     if (opts.logging) {
-      log("Running command:", hologramExecutable, args, configPath[0]);
+      log("Running command:", hologramExecutable, args);
     }
-
-    var program;
-    if (args.length > 0) {
-      if (opts.logging) {
-        log("Running command:", hologramExecutable, args, configPath[0]);
-      }
-      program = spawn(hologramExecutable, args, configPath);
-    }
-    else {
-      if (opts.logging) {
-        log("Running command:", hologramExecutable, configPath[0]);
-      }
-      program = spawn(hologramExecutable, configPath);
-    }
+    var program = spawn(hologramExecutable, args);
 
     // listen to stderr and emit errors if any
     var errBuffer = new Buffer(0);

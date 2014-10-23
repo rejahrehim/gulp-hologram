@@ -1,4 +1,4 @@
-#gulp-hologram  
+#gulp-hologram
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
@@ -36,9 +36,26 @@ gulp.task('hologram', function() {
 
 #### options.logging
 Type: `Boolean`
+Set `logging: true` to enable Logging.
+
+
+```js
+gulp.task('hologram', function() {
+        gulp.src('config.yml')
+                .pipe(hologram({logging:true}));
+});
+```
 
 #### options.bundler
+Type: 'Boolean'
 Set `bundler: true` to invoke `hologram` via bundler.
+
+```js
+gulp.task('hologram', function() {
+        gulp.src('config.yml')
+                .pipe(hologram({bundler:true, logging:true}));
+});
+```
 
 ## Contributing
 Take care to maintain the existing coding style. [gulp](http://gulpjs.com/).
@@ -46,6 +63,7 @@ Take care to maintain the existing coding style. [gulp](http://gulpjs.com/).
 ## TO DO
  -Add unit tests
 ## Release History
+ - 1.2.0 (Fixed Bugs)
  - 1.1.0 (Added support for Bundler)
  - 1.0.0 (First release)
 
