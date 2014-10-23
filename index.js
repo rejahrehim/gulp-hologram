@@ -68,7 +68,20 @@ function gulpHologram(opts) {
     if (opts.logging) {
       log("Running command:", hologramExecutable, args, configPath[0]);
     }
-    var program = spawn(hologramExecutable, args, configPath);
+
+    var program;
+    if (args.length > 0) {
+      if (opts.logging) {
+        log("Running command:", hologramExecutable, args, configPath[0]);
+      }
+      program = spawn(hologramExecutable, args, configPath);
+    }
+    else {
+      if (opts.logging) {
+        log("Running command:", hologramExecutable, configPath[0]);
+      }
+      program = spawn(hologramExecutable, configPath);
+    }
 
     // listen to stderr and emit errors if any
     var errBuffer = new Buffer(0);
