@@ -66,7 +66,7 @@ function gulpHologram(opts) {
       //Passing config path of hologram to args
       args.push(file.path);
 
-      if (ext !== ".yml") {
+      if (ext !== ".yml" && ext !== ".yaml") {
         throw new PluginError(PLUGIN_NAME,
           "\nYou must provide a path to your yml hologram config file as source.\n"
           );
