@@ -1,6 +1,6 @@
 {
   "name": "gulp-hologram",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Generate Hologram style guides with Gulp",
   "repository": {
     "type": "git",
@@ -36,4 +36,3 @@
   },
   "license": "MIT"
 }
-
