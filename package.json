@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/rejahrehim/gulp-hologram.git"
   },
-  "author": "Rejah Rehim <rejah.rehim@gmail.com> (https:rejahrehim.com)",
+  "author": "Rejah Rehim <rejah.rehim@gmail.com> (https://rejahrehim.com)",
   "keywords": [
     "gulpplugin"
   ],
@@ -36,3 +36,4 @@
   },
   "license": "MIT"
 }
+
