@@ -1,4 +1,4 @@
-#gulp-hologram
+# gulp-hologram
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
